@@ -1,0 +1,19 @@
+apiVersion: elbv2.k8s.aws/v1beta1
+kind: TargetGroupBinding
+metadata:
+  name: gst-alb-pub-dev-eks-nginx
+  labels:
+    ingress.k8s.aws/stack: eks-test-group
+spec:
+  targetType: ip
+  networking:
+    ingress:
+    - from:
+      - securityGroup:
+          groupID: sg-06870a088ca75aed4
+      ports:
+      - port: 80
+  serviceRef:
+    name: my-nginx
+    port: 80
+  targetGroupARN: arn:aws:elasticloadbalancing:ap-northeast-2:623397710446:targetgroup/TG-ALB-PRIV-DEV-EKS-NGINX/72b0475db28522a7
