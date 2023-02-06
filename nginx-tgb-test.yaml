@@ -15,7 +15,7 @@ spec:
       ports:
       - port: 80
   serviceRef:
-    name: my-nginx
+    name: rollout-bluegreen-active
     port: 80
   targetGroupARN: arn:aws:elasticloadbalancing:ap-northeast-2:623397710446:targetgroup/TG-ALB-PRIV-DEV-EKS-BLUE/4ff4e8824d149531
 ---
@@ -35,6 +35,6 @@ spec:
       ports:
       - port: 80
   serviceRef:
-    name: my-nginx
+    name: rollout-bluegreen-preview
     port: 80
   targetGroupARN: arn:aws:elasticloadbalancing:ap-northeast-2:623397710446:targetgroup/TG-ALB-PRIV-DEV-EKS-GREEN/1f876ef17471a73e
