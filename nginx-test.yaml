@@ -12,11 +12,11 @@ spec:
     metadata:
       labels:
         run: rollouts-demo
-        tags.datadoghq.com/version: 1.2334.3
+        # tags.datadoghq.com/version: 1.2334.3
     spec:
       containers:
       - name: rollouts-demo
-        image: rancher/hello-world # argoproj/rollouts-demo:green
+        image: nginx # argoproj/rollouts-demo:green
         ports:
         - containerPort: 80
   strategy:
